@@ -1,7 +1,8 @@
-FROM python:3.11-alpine
+FROM ubuntu:22.04
 LABEL engg="prat"
-
-COPY . .
+RUN apt install python3 -y
+RUN apt install git -y
+RUN git clone https://github.com/imanaspaul/Django-eCommerce-tutorial-manascode.git
 RUN pip install virtualenv 
 RUN virtualenv env
 RUN pip install -r requirements.txt
